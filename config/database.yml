@@ -23,9 +23,10 @@ default: &default
 
 development:
   <<: *default
+  database: first_app_development
   host: localhost
-  username: user
-  database: app-dev
+  username: niels
+  password: test
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,9 +60,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  host: localhost
-  username: user
   database: first_app_test
+  host: localhost
+  username: niels
+  password: test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +86,7 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: first_app_production
-  username: first_app
-  password: <%= ENV['FIRST_APP_DATABASE_PASSWORD'] %>
+  username: niels
+  password: test
